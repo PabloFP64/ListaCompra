@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ListaCompra</string>
+    <string name="lista_de_la_compra">Lista de la compra: </string>
+    <string name="NumProductos">0</string>
+    <string name="EurosTotales">0</string>
+    <string name="TextoAyudaProductos"> productos = </string>
+    <string name="simboloEuro"> €</string>
+    <string name="a_adir">Añadir</string>
+</resources>

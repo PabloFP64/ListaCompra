@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.listacompra.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/lista_de_la_compra" />
+
+        <TextView
+            android:id="@+id/numeroProductos"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/NumProductos" />
+
+        <TextView
+            android:id="@+id/textoProductos"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/TextoAyudaProductos" />
+
+        <TextView
+            android:id="@+id/PrecioTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/EurosTotales" />
+
+        <TextView
+            android:id="@+id/Euros"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/simboloEuro" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_todo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/LinearLayoutBotones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout"
+        app:layout_constraintVertical_bias="0.074" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutBotones"
+        android:layout_width="375dp"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/botonAñadir"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#0D4853"
+            android:text="@string/a_adir"
+            android:onClick="crearProducto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="UsingOnClickInXml" />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
