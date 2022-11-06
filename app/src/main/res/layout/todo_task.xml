@@ -8,9 +8,8 @@
         android:id="@+id/title_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-
+        android:layout_alignParentLeft="true"
         android:textSize="20sp" />
 
     <Button
@@ -20,6 +19,6 @@
         android:layout_alignParentEnd="true"
         android:onClick="deleteTask"
         android:layout_alignParentRight="true"
-        android:text="Task Completed" />
+        android:text="@string/borrar_producto" />
 
 </RelativeLayout>

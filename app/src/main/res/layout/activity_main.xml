@@ -11,50 +11,70 @@
     tools:context="com.example.listacompra.MainActivity">
 
 
-    <LinearLayout
-        android:id="@+id/LinearLayout"
-        android:layout_width="364dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TextoTotal"
+        android:layout_width="371dp"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
 
         <TextView
             android:id="@+id/textview"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/lista_de_la_compra" />
-
-        <TextView
-            android:id="@+id/numeroProductos"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/NumProductos" />
+            android:layout_height="wrap_content"
+            android:text="@string/lista_de_la_compra"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textoProductos"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/TextoAyudaProductos" />
-
-        <TextView
-            android:id="@+id/PrecioTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/EurosTotales" />
+            android:layout_width="85dp"
+            android:layout_height="0dp"
+            android:text="@string/TextoAyudaProductos"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numeroProductos"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Euros"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/simboloEuro" />
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:text="@string/simboloEuro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/PrecioTotal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/PrecioTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/EurosTotales"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textoProductos"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/numeroProductos"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="6dp"
+            android:text="@string/NumProductos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <ListView
         android:id="@+id/list_todo"
@@ -62,16 +82,64 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/LinearLayoutEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextoTotal">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutEditText"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/LinearLayoutBotones"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.687"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout"
-        app:layout_constraintVertical_bias="0.074" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/textoProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:autofillHints=""
+            android:hint="@string/productoHint"
+            android:inputType="textLongMessage"
+            android:text=""
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/textoCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:hint="@string/cantidadHint"
+            android:inputType="textLongMessage"
+            android:text=""
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/textoPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:hint="@string/precioHint"
+            android:inputType="textLongMessage"
+            android:text=""
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LinearLayoutBotones"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="49dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
@@ -85,13 +153,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="#0D4853"
-            android:text="@string/a_adir"
             android:onClick="crearProducto"
+            android:text="@string/a_adir"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="UsingOnClickInXml" />
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

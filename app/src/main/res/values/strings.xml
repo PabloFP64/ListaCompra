@@ -3,7 +3,11 @@
     <string name="lista_de_la_compra">Lista de la compra: </string>
     <string name="NumProductos">0</string>
     <string name="EurosTotales">0</string>
-    <string name="TextoAyudaProductos"> productos = </string>
+    <string name="TextoAyudaProductos">productos =</string>
     <string name="simboloEuro"> €</string>
     <string name="a_adir">Añadir</string>
+    <string name="borrar_producto">Borrar producto</string>
+    <string name="productoHint">Producto</string>
+    <string name="cantidadHint">Cantidad</string>
+    <string name="precioHint">Precio</string>
 </resources>

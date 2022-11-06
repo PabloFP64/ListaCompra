@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private TaskDatabaseHelper taskHelper;
     private ListView TaskList;
     private ArrayAdapter<String> arrAdapter;
+    private EditText mProducto;
+    private EditText mCantidad;
+    private EditText mPrecio;
 
 
 
@@ -75,22 +78,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void crearProducto(View view) {
-        final EditText taskEdit = new EditText(this);
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Add a new task").setMessage("What do you want to do next?").setView(taskEdit)
-                .setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String task = String.valueOf(taskEdit.getText());
-                        SQLiteDatabase db = taskHelper.getWritableDatabase();
-                        ContentValues values = new ContentValues();
-                        values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
-                        db.insertWithOnConflict(TaskContract.TaskEntry.TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
-                        db.close();
-                        updateUI();
-                    }
-                })
-                .setNegativeButton("Cancel", null).create();
-        dialog.show();
+
+        mProducto = findViewById(R.id.textoProducto);
+        mCantidad = findViewById(R.id.textoCantidad);
+        mPrecio = findViewById(R.id.textoPrecio);
+
+        String producto = mProducto.getText().toString();
+        String cantidad = mCantidad.getText().toString();
+        String precio = mPrecio.getText().toString();
+
+        SQLiteDatabase db = taskHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TaskContract.TaskEntry.COL_TASK_TITLE, producto);
+        db.insertWithOnConflict(TaskContract.TaskEntry.TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
+        db.close();
+        updateUI();
     }
 }
